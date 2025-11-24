@@ -1,5 +1,11 @@
+import complejidades.*;
+
 public class App {
     public static void main(String[] args) throws Exception {
-        System.out.println("Xavier Fajardo");
+        new ComplejidadConstante().ejemplo();
+        new ComplejidadLineal().ejemplo();
+        new ComplejidadCuadratica().ejemplo();
+        new ComplejidadLogaritmica().ejemplo();
+        new ComplejidadNLogN().ejemplo();
     }
 }
