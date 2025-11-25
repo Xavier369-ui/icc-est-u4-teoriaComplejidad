@@ -11,7 +11,7 @@
 
 # Integrantes:
 - Xavier Josue Fajardo Zumba - https://github.com/Xavier369-ui/icc-est-u4-teoriaComplejidad.git
-- Nombre Completo 1 - Enlace a GitHub
+- Franklin Eduardo Ramon Saiteros- https://github.com/Xavier369-ui/icc-est-u4-teoriaComplejidad.git
 
 # Objetivos:
 
@@ -55,12 +55,21 @@ Es la cantidad de memoria que un algoritmo necesita para ejecutarse. Incluye el 
 
 La eficiencia de un algoritmo se refiere a qué tan bien utiliza los recursos del sistema para resolver un problema, principalmente el tiempo de ejecución y la memoria. Un algoritmo eficiente logra el resultado correcto utilizando la menor cantidad posible de recursos computacionales.
 
-### 1.4 Factores de tiempo de ejecución Eduardo
+### 1.4 Factores de tiempo de ejecución 
 
-* Factores propios
-* Factores circunstanciales
-* Análisis teórico
-* Análisis experimental
+Los factores de tiempo de ejecución influyen directamente en cómo se desempeña un algoritmo cuando procesa diferentes cantidades de datos. Estos factores permiten comprender por qué un algoritmo puede ser rápido en ciertas condiciones y más lento en otras, incluso si su complejidad teórica es la misma. Analizarlos es fundamental para entender el rendimiento real y para determinar si un algoritmo es adecuado para implementarse en un sistema específico.
+
+Factores propios:
+Son los factores que dependen directamente del diseño interno del algoritmo. Entre ellos se encuentran la cantidad de operaciones que realiza, la estructura de sus ciclos, la forma en que accede a los datos y la estrategia utilizada para resolver el problema. Estos elementos definen la complejidad teórica del algoritmo y permiten comparar su eficiencia con otros métodos.
+
+Factores circunstanciales:
+Son elementos externos al algoritmo que afectan su tiempo de ejecución. Incluyen la velocidad del procesador, la memoria disponible, el lenguaje de programación, la optimización del compilador, el sistema operativo y el tipo de hardware donde se ejecuta. Aunque no cambian la complejidad, sí influyen en el rendimiento real.
+
+Análisis teórico:
+Consiste en estudiar el algoritmo mediante modelos matemáticos como la notación Big O, Big Ω y Big Θ. Este análisis permite predecir cómo crecerá el tiempo de ejecución según el tamaño de la entrada, sin necesidad de ejecutar el programa. Es útil para comparar algoritmos de forma general y objetiva.
+
+Análisis experimental:
+Consiste en medir directamente el tiempo que tarda un algoritmo en ejecutarse usando diferentes tamaños de entrada. Este tipo de análisis muestra el comportamiento real del algoritmo en un entorno específico, teniendo en cuenta factores externos como el hardware o el lenguaje utilizado. La combinación del análisis teórico y experimental permite obtener una evaluación completa del rendimiento.
 
 ### 1.5 Notación de complejidad
 La notación de complejidad permite expresar matemáticamente cómo crece el tiempo de ejecución de un algoritmo en relación con el tamaño de la entrada, facilitando su comparación y análisis.
@@ -124,7 +133,7 @@ public void ejemplo() {
     int suma = x + y;
 }
 ```
-
+Este ejemplo corresponde a una complejidad O(1) porque todas las operaciones que realiza el método son constantes y no dependen del tamaño de los datos de entrada. El programa únicamente imprime un mensaje y ejecuta asignaciones y una suma simple, acciones que siempre toman el mismo tiempo sin importar si la entrada es pequeña o grande. No existe ningún ciclo o repetición que pueda aumentar el tiempo de ejecución por lo que su comportamiento es completamente constante, algo constante.
 ---
 
 ## **2.2 Complejidad O(n) – Lineal**
@@ -141,7 +150,7 @@ public void ejemplo() {
     }
 }
 ```
-
+Este ejemplo tiene una complejidad O(n) porque el tiempo de ejecución depende directamente de la cantidad de elementos presentes en el arreglo. El ciclo for recorre cada posición exactamente una vez, por lo que mientras más grande sea el arreglo, más iteraciones deberá realizar el algoritmo. Esto significa que el tiempo crece de manera proporcional al número de elementos, haciendo que el comportamiento sea lineal.
 ---
 
 ## **2.3 Complejidad O(n²) – Cuadrática**
@@ -160,7 +169,7 @@ public void ejemplo() {
     }
 }
 ```
-
+Este ejemplo tiene una complejidad O(n²) porque utiliza dos ciclos for anidados que recorren el arreglo completo. Por cada iteración del primer ciclo, el segundo ciclo vuelve a recorrer todos los elementos, lo que provoca que la cantidad total de operaciones crezca de manera cuadrática. Si el arreglo tiene n elementos, el algoritmo realiza n por n iteraciones asique lo que pasa es que el tiempo de ejecución aumenta mucho más rápido a medida que crece la entrada.
 ---
 
 ## **2.4 Complejidad O(log n) – Logarítmica**
@@ -178,7 +187,7 @@ public void ejemplo() {
     }
 }
 ```
-
+Este ejemplo corresponde a una complejidad O(log n) porque en cada iteración del ciclo el valor de n se reduce a la mitad, haciendo que la cantidad de repeticiones disminuya rápidamente. En lugar de recorrer todos los valores uno por uno, el algoritmo divide el tamaño del problema en cada paso, por lo que el tiempo de ejecución crece de forma logarítmica. Esto significa que aunque n aumenta mucho, el número de iteraciones solo crece de manera muy lenta.
 ---
 
 ## **2.5 Complejidad O(n log n) – N Log N**
@@ -200,23 +209,22 @@ private void ordenar(int[] arr){
     java.util.Arrays.sort(arr);
 }
 ```
-
-### **Explicación resumida** Eduardp
-
-*(Aquí el estudiante explica por qué es O(1))*
-
+Este ejemplo tiene una complejidad O(n log n) porque utiliza el método Arrays.sort(), este implementa algoritmos eficientes como QuickSort o MergeSort según el caso. Estos algoritmos dividen el problema repetidamente y realizan ordenamientos parciales, combinando pasos logarítmicos con recorridos lineales del arreglo. El resultado es que el tiempo de ejecución crece proporcionalmente a n multiplicado por log n, esto hace que este tipo de complejidad sea más eficiente que O(n²) y adecuada para ordenar grandes cantidades de datos.
 ---
-**PARA CADA COMPLEJIDAD, REPETIR LA ESTRUCTURA ANTERIOR** Eduardo
+
 
 
 # **Conclusiones**
-Xavier Fajardo :
+Xavier Josue Fajardo Zumba :
 El estudio de la teoría de la complejidad algorítmica fue crucial para entender que el rendimiento de los algoritmos varía significativamente con el aumento de los datos. Se demostró que la complejidad cuadrática, $O(n^2)$, es la más ineficiente, ya que el número de operaciones crece exponencialmente, consumiendo mucho más tiempo y reduciendo drásticamente el rendimiento en comparación con complejidades superiores  que son mucho más adecuadas para grandes volúmenes de información. Durante el proyecto, se aprendió a identificar cómo los bucles, las recursiones y las estructuras de datos afectan la eficiencia de un algoritmo, subrayando la importancia de evaluar el costo temporal y espacial antes de la implementación para evitar problemas de rendimiento, especialmente en sistemas con grandes cantidades de datos. Fue sorprendente constatar que ajustes mínimos en la estructura del código, como elegir entre un algoritmo de ordenamiento burbuja y Merge Sort, generan diferencias sustanciales en el tiempo de ejecución. En resumen, la comprensión de la teoría de la complejidad es fundamental, ya que no solo mejora la habilidad de programar de manera eficiente, sino que también fomenta una mentalidad crítica para diseñar soluciones óptimas, tomar mejores decisiones, economizar recursos y asegurar un alto desempeño de las aplicaciones desarrolladas.
 
-*(Aquí el estudiante agrega conclusiones propias del trabajo)*
+Franklin Eduardo Ramon Saiteros:
+El análisis de la complejidad permitió comprender cómo el tiempo de ejecución y el uso de memoria influyen en el rendimiento de los algoritmos. A través de los ejemplos implementados en Java se evidenció que cada tipo de complejidad se comporta de manera distinta según el tamaño de la entrada, lo que demuestra la importancia de seleccionar algoritmos adecuados para garantizar un buen desempeño en diferentes situaciones.
 
-**POR ESTUDIANTE**: *(Xavier Josue Fajardo Zumba,
-)*
+Comprender la complejidad algorítmica desde la formación académica nos prepara mejor para enfrentar los desafíos reales en el campo profesional. En ámbitos laborales como el desarrollo de software, análisis de datos, optimización de sistemas o ingeniería de aplicaciones, saber elegir y diseñar algoritmos adecuados permite crear soluciones mas rapidas es muy util. Esto no solo mejora la calidad del producto final, sino que también optimiza recursos, reduce costos operativos y facilita el mantenimiento del sistema, cualidades esenciales para destacarse como profesionales
+
+El estudio reforzó la necesidad de evaluar tanto el análisis teórico como el experimental para entender completamente el comportamiento de un algoritmo. Esto permite identificar posibles limitaciones, optimizar el rendimiento y asegurar que las soluciones desarrolladas sean eficientes y escalables frente a distintos volúmenes de datos. 
+
 
 
 ---
